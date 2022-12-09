@@ -55,7 +55,7 @@ CREATE TABLE `categorie` (
 -- Déchargement des données de la table `categorie`
 --
 
-INSERT INTO `categorie` (`id_c`, `name`) VALUES
+INSERT INTO `categorie` (`id_c`,`name`) VALUES
 (1, 'colliers');
 
 -- --------------------------------------------------------

@@ -1,6 +1,7 @@
 <?php
+include_once './View/includess/hedre.php';
  require_once './autoloud.php';
- $pages=["home","update","add","login"];
+ $pages=["home","update","add","about","login","data"];
  $cll=new homeController;
  if(isset($_GET['page'])){
    
@@ -11,10 +12,12 @@
         $cll->index($page);
 
     }else{
-        echo"sss";
+      
         include_once("View/includess/404.php");
     }
 }
 else{
     $cll->index("home");
 }
+include_once './View/includess/foter.php';
+?>
