@@ -1,6 +1,7 @@
 
 <?php 
 require_once './Controller/prodactController.php';
+print_r(getprods()[0]);
 
 ?>
 
@@ -19,23 +20,22 @@ require_once './Controller/prodactController.php';
     <tr>
       <th>name</th>
       <th>prix</th>
-      <th>Action</th>   
       <th>ctgoery</th>
       <th>description</th>
+      <th>image</th>
+      <th>Action</th>   
     </tr>
   </thead>
   <tbody>
-
     <?php  foreach(getprods() as $user ){ ?>
     <tr>
-      <td><?php echo $user[0]
-      ?'<span class="badge bg-success">Success</span>'
-      :
-      '<span class="badge bg-danger">Danger</span>';
+      
+      <td><?php echo $user[2]
       ?></td>
       <td><?php echo $user[1]; ?></td>
-
-
+      <td> <?php echo $user[7] ?>
+      <td> <?php echo $user[3] ?>
+      <td><?php echo $user[4]?>  <img src="./public/images/logo.png" alt=""></td>
       <td class="d-flex flex-row ">
         <form action="update" method="post">
         <input type="hidden" name="id" value="<?php echo $user[0]; ?>">

@@ -1,5 +1,8 @@
 <?php
-$prod = new prodactController();
+require_once './Controller/prodactController.php';
+// call function update_activ  for active 
+update_activ();
+// call function  getprod for active 
 $t=getprod();
 echo($t[0]['id_p']);
  ?>
@@ -50,13 +53,14 @@ echo($t[0]['id_p']);
     </nav>
 
 <form class="formadd" id="fadd" method="POST" autocomplete="off" enctype="multipart/form-data" >
+<input    name="id" type="hidden" value='<?php echo $t[0]['id_p'] ?>' class="form-control">
 <div class="input-group mb-3">
-  <!-- <span class="input-group-text" id="basic-addon1">Name</span> -->
+  <!-- <span class="input-group-text" id="basic-addon1">Name    </span> -->
   <input  style="font-family: inter;"   name="name" type="text" value='<?php echo $t[0]['name'] ?>' class="form-control" placeholder="name" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 <div class="input-group mb-3">
-  <input  name="prix" type="text" class="form-control" placeholder="prix" value='<?php echo $t[0]['prix'] ?>' aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <input  name="prixx" type="text" class="form-control" placeholder="prix" value='<?php echo $t[0]['prix'] ?>' aria-label="Recipient's username" aria-describedby="basic-addon2">
   <!-- <span class="input-group-text" id="basic-addon2">Prix</span> -->
 </div>
 <div class="input-group">

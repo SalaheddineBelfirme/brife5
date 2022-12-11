@@ -1,6 +1,8 @@
 <?php
 require_once './Controller/prodactController.php';
 add_activ();
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
