@@ -19,7 +19,7 @@
    }
 
    static function getallCate($w=null){
-      $qury='SELECT  products.* ,categorie.* FROM products INNER JOIN categorie WHERE products.id_c=categorie.id_c ';
+      $qury='SELECT * from categorie';
       if($w==null){
           $data=db::concet()->prepare($qury);
       }else{
@@ -39,12 +39,15 @@
     
    }
 
-
-
 // update prodact
 
 static function updateP($name,$description,$prix,$id_c,$id){
    $data=db::concet()->prepare("UPDATE `products` SET `prix`='$prix',`name`='$name',`description`='$description',`id_c`='$id_c' WHERE `id_p`='$id'");
+   $data->execute();  
+   
+  }
+  static function updatePI($name,$description,$prix,$id_c,$image,$id){
+   $data=db::concet()->prepare("UPDATE `products` SET `prix`='$prix',`name`='$name',`image`='$image',`description`='$description',`id_c`='$id_c' WHERE `id_p`='$id'");
    $data->execute();  
    
   }

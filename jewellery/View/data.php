@@ -1,7 +1,7 @@
 
 <?php 
 require_once './Controller/prodactController.php';
-print_r(getprods()[0]);
+
 
 ?>
 
@@ -27,7 +27,7 @@ print_r(getprods()[0]);
     </tr>
   </thead>
   <tbody>
-    <?php  foreach(getprods() as $user ){ ?>
+    <?php  foreach($prods as $user ){ ?>
     <tr>
       
       <td><?php echo $user[2]
@@ -35,14 +35,14 @@ print_r(getprods()[0]);
       <td><?php echo $user[1]; ?></td>
       <td> <?php echo $user[7] ?>
       <td> <?php echo $user[3] ?>
-      <td><?php echo $user[4]?>  <img src="./public/images/logo.png" alt=""></td>
+      <td><?php echo $user[4]?>  <img src="./public/images/<?php echo $user[4]?>" alt=""></td>
       <td class="d-flex flex-row ">
         <form action="update" method="post">
-        <input type="hidden" name="id" value="<?php echo $user[0]; ?>">
+        <input type="hidden" name="id_ed" value="<?php echo $user[0]; ?>">
         <button  class="btn btn-warning"><i class="fa fa-edit"></i></button>
       </form>
-      <form action="login " method="post">
-        <input type="hidden" name="id" value="<?php echo $user[0]; ?>">
+      <form action=" " method="post">
+        <input type="hidden" name="id_de" value="<?php echo $user[0]; ?>">
         <button  class="btn btn-danger"><i class="fa fa-trash"></i></button>
       </form>
     </td>

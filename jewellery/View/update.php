@@ -1,10 +1,10 @@
 <?php
 require_once './Controller/prodactController.php';
 // call function update_activ  for active 
-update_activ();
+
 // call function  getprod for active 
-$t=getprod();
-echo($t[0]['id_p']);
+print_r ($t[0]);
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +65,7 @@ echo($t[0]['id_p']);
 </div>
 <div class="input-group">
   <!-- <span class="input-group-text">With textarea</span> -->
-  <textarea   style="font-family: inter;"  name="description" placeholder="description" value='<?php echo $t[0]['prix'] ?>' class="form-control desc" aria-label="With textarea"></textarea><br>
+  <textarea   style="font-family: inter;"  name="description" placeholder="description" value='<?php echo $t[0]['description'] ?>' class="form-control desc" aria-label="With textarea"></textarea><br>
 
 </div>
 
@@ -78,7 +78,7 @@ echo($t[0]['id_p']);
 <div class="input-group mb-3">
 <!-- <span class="input-group-text">category</span> -->
 <select  style="font-family: inter;" name="category" class="form-control" name="" id="">   
-          <option  style="font-family: inter;" value="">testt</option>
+          <option  style="font-family: inter;" value="1">testt</option>
 </select>
 
 </div>

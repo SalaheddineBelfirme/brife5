@@ -1,7 +1,7 @@
 <?php
 include_once './View/includess/hedre.php';
  require_once './autoloud.php';
- $pages=["home","update","add","about","login","data"];
+ $pages=["home","update","add","about","login","contact","data"];
  $cll=new homeController;
  if(isset($_GET['page'])){
    

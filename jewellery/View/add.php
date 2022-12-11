@@ -1,7 +1,7 @@
 <?php
 require_once './Controller/prodactController.php';
-add_activ();
-
+// add_activ();
+print_r($categs);
 
  ?>
 <!DOCTYPE html>
