@@ -28,10 +28,17 @@ public function addProducts(){
         $newImageName=uniqid();
         $newImageName.='.'. $imageEx;
         move_uploaded_file($_FILES['image']['tmp_name'],'./public/images/'.$newImageName);
+       
         $products=product::addp($_POST['name'],$_POST['description'],$_POST['prix'],$newImageName,$_POST['category']);
-        //   return $products;
-   
+
 }
+public function deleteP(){
+  echo  $_POST['id_de'];
+   product::deletep($_POST['id_de']);
+  
+    
+}
+
 // update product
 public function updateProducts(){
    
@@ -57,6 +64,7 @@ public function updateProducts(){
 
 
 
+
 }
 // active get all data
 
@@ -70,17 +78,33 @@ if(isset($_POST["id_ed"])){
     $t= $prod->getOneProduct();
 
 }
+if(isset($_POST["subdit"])){
+    $prod = new prodactController();
+    $t= $prod->getOneProduct();
+
+}
+
 
 
 if(isset($_POST["submit"])){
+    
     $prod = new prodactController();
+    echo $prod;
     $prod->addProducts();
+    header('Location:data');
 }
 
 // activ fucntion updateprodact
     if(isset($_POST["submitadd"])){
     $prod = new prodactController();
     $prod->updateProducts();
-    $t= $prod->getOneProduct();
+    header('Location:data');
+
+}
+if(isset($_POST['id_de'])){
+    $prod = new prodactController();
+    $prod->deleteP();
+    header('Location:data');
+    
 }
 ?>

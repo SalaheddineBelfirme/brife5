@@ -34,7 +34,7 @@
      }
 //add prodact 
    static function addp($name,$description,$prix,$image,$id_c){
-    $data=db::concet()->prepare("INSERT INTO `products`(`id_p`, `prix`, `name`, `description`,`image`, `id_c`) VALUES ('','$prix','$name','$description','$image',1)");
+    $data=db::concet()->prepare("INSERT INTO `products`(`id_p`, `prix`, `name`, `description`,`image`, `id_c`) VALUES ('','$prix','$name','$description','$image',$id_c)");
     $data->execute();  
     
    }
@@ -49,6 +49,13 @@ static function updateP($name,$description,$prix,$id_c,$id){
   static function updatePI($name,$description,$prix,$id_c,$image,$id){
    $data=db::concet()->prepare("UPDATE `products` SET `prix`='$prix',`name`='$name',`image`='$image',`description`='$description',`id_c`='$id_c' WHERE `id_p`='$id'");
    $data->execute();  
+   
+  }
+
+  static function deletep($id){
+   $data=db::concet()->prepare("DELETE FROM `products` WHERE id_p=$id");
+   $data->execute();  
+   
    
   }
      }

@@ -1,7 +1,7 @@
 <?php
 require_once './Controller/prodactController.php';
 // add_activ();
-print_r($categs);
+// print_r($categs);
 
  ?>
 <!DOCTYPE html>
@@ -15,8 +15,6 @@ print_r($categs);
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src ="js.js"></script>
-    
-    
 <title>add prodact</title>
 </head>
 <body class="bodyaddpro">
@@ -53,11 +51,11 @@ print_r($categs);
 <form class="formadd" id="fadd" method="POST" autocomplete="off" enctype="multipart/form-data" >
 <div class="input-group mb-3">
   <!-- <span class="input-group-text" id="basic-addon1">Name</span> -->
-  <input  style="font-family: inter;"   name="name" type="text" class="form-control" placeholder="name" aria-label="Username" aria-describedby="basic-addon1">
+  <input  style="font-family: inter;"  required  name="name" type="text" class="form-control" placeholder="namme" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 <div class="input-group mb-3">
-  <input  name="prix" type="text" class="form-control" placeholder="prix" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <input required  name="prix" type="text" class="form-control" placeholder="prix" aria-label="Recipient's username" aria-describedby="basic-addon2">
   <!-- <span class="input-group-text" id="basic-addon2">Prix</span> -->
 </div>
 <div class="input-group">
@@ -69,13 +67,17 @@ print_r($categs);
 
 <div class="input-group mb-3">
   <!-- <span class="input-group-text" id="basic-addon3">IMAGE</span> -->
-  <input   style="font-family: inter;" accept=".jpg,jpeg,.png" name="image" type="file" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  <input  required  style="font-family: inter;" accept=".jpg,jpeg,.png" name="image" type="file" class="form-control" id="basic-url" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
 <!-- <span class="input-group-text">category</span> -->
-<select  style="font-family: inter;" name="category" class="form-control" name="" id="">   
-          <option  style="font-family: inter;" value="">testt</option>
+<select  style="font-family: inter;" name="category" class="form-control" >   
+    <?php foreach( $categs as $cate){?>
+        <option  style="font-family: inter;" value="<?php echo $cate['id_c'] ?>"><?php echo $cate['name_cate'] ?></option>
+        <?php
+    }
+         ?>
 </select>
 
 </div>

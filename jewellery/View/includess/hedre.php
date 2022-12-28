@@ -1,5 +1,7 @@
 <!-- 
 <?php 
+session_start();
+require_once './Controller/homeController.php';
 
 ?> -->
 
@@ -7,6 +9,7 @@
 <html>
 
 <head>
+  
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,8 +36,10 @@
   
   <!-- responsive style -->
   <link href="./public/css/responsive.css" rel="stylesheet" />
+  
   <!-- Custom styles for this template -->
   <link href="./public/css/style.css" rel="stylesheet" />
+  <link href="./public/css/mycss.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -56,7 +61,7 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
+              <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="http://localhost/brife5/jewellery/">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -64,14 +69,18 @@
                   <a class="nav-link" href="http://localhost/brife5/jewellery/about"> About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="http://localhost/brife5/jewellery/login"> shop</a>
+                <a class="nav-link" href="http://localhost/brife5/jewellery/shop"> shop</a>
                 </li>
-                <li class="nav-item">
+                <li  class="nav-item">
                 <a class="nav-link" href="http://localhost/brife5/jewellery/contact"> contact</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="http://localhost/brife5/jewellery/data"> Login</a>
+                <li style="display: <?php echo $data; ?>  ;" class="nav-item">
+                <a class="nav-link" href="http://localhost/brife5/jewellery/data"> dashbord</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href=" <?php echo $hrf;?>" > <?php echo $bol;   ?> </a>
+                </li>
+              
               </ul>
             </div>
           </div>

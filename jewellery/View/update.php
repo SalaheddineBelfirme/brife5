@@ -1,9 +1,5 @@
 <?php
 require_once './Controller/prodactController.php';
-// call function update_activ  for active 
-
-// call function  getprod for active 
-print_r ($t[0]);
 
  ?>
 <!DOCTYPE html>
@@ -65,7 +61,7 @@ print_r ($t[0]);
 </div>
 <div class="input-group">
   <!-- <span class="input-group-text">With textarea</span> -->
-  <textarea   style="font-family: inter;"  name="description" placeholder="description" value='<?php echo $t[0]['description'] ?>' class="form-control desc" aria-label="With textarea"></textarea><br>
+  <textarea   style="font-family: inter;"  name="description" placeholder="description"  class="form-control desc" aria-label="With textarea"> <?php echo $t[0]['description'] ?></textarea><br>
 
 </div>
 
@@ -77,8 +73,12 @@ print_r ($t[0]);
 
 <div class="input-group mb-3">
 <!-- <span class="input-group-text">category</span> -->
-<select  style="font-family: inter;" name="category" class="form-control" name="" id="">   
-          <option  style="font-family: inter;" value="1">testt</option>
+<select  style="font-family: inter;" name="category" class="form-control" >   
+    <?php foreach( $categs as $cate){?>
+        <option <?php if($t[0]['id_c']==$cate['id_c'] ){echo 'selected';} ?>  style="font-family: inter;" value="<?php echo $cate['id_c'] ?>"><?php echo $cate['name_cate'] ?></option>
+        <?php
+    }
+         ?>
 </select>
 
 </div>

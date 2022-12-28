@@ -1,0 +1,36 @@
+/* body{
+    background-color: red;
+} */
+.formadd{
+    width: 70%;
+    margin: auto;
+}
+
+#imgp{
+
+    width: 39px;
+}
+
+
+
+
+/* page contecat */
+#fg input , #fg textarea{
+
+    border: none;
+    border-bottom: 2px solid;
+    background-color: transparent;
+}
+
+#dit img{
+    height: 248px;
+    width: 250px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* #fg textarea{
+    border: none;
+    border-bottom: 2px solid;
+    background-color: transparent;
+} */
